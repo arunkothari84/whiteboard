@@ -93,11 +93,14 @@ while(True):
             if(area>max_area):
                 max_area = area
                 largest_contour=i
-        try:
-            c = contours[largest_contour]
-            
-        except IndexError:
-            continue
+    try:
+        c = contours[largest_contour]
+
+    except IndexError:
+        continue
+        
+    except NameError:
+        continue
         
     
     extTop = tuple(c[c[:, :, 1].argmin()][0])
